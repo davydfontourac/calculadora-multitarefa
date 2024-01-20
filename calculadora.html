@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Calculadora de IMC</title>
+   
+</head>
+<body>
+
+    
+    <div id="imc">
+        <h1>Calculadora de IMC</h1><br>
+        Informe seu peso (kg) <br>
+        <input class="peso" type="number" placeholder="Digite o seu peso"><br> 
+        Altura (em metros)<br>
+        <input class="altura" type="number" placeholder="Digite a sua altura"><br> 
+        <button onclick="calcularIMC()">Calcular</button>
+        <p class="resultado"></p>
+
+        <img id="img" src="tabelaimc.jpeg"><br>
+
+       <button onclick=""><a href="conversor.html">Conversor de temperatura</a></button>
+       <button onclick=""><a href="algebra.html">Calculadora algébrica</a></button>
+
+        
+    </div>
+
+    
+
+    <script>
+        function calcularIMC() {
+            var peso = parseFloat(document.querySelector(".peso").value);
+            var altura = parseFloat(document.querySelector(".altura").value);
+
+            if (!isNaN(peso) && !isNaN(altura)) {
+                var resultado = peso / (altura * altura);
+                resultado = resultado.toFixed(2);
+
+                var mensagem = "  " + resultado + " - ";
+
+                if (resultado < 18.5) {
+                    mensagem += "Abaixo do peso ideal.";
+                } else if (resultado >= 18.5 && resultado < 24.9) {
+                    mensagem += "Peso ideal.";
+                } else if (resultado >= 25 && resultado < 29.9) {
+                    mensagem += "Sobrepeso.";
+                } else if (resultado >= 30 && resultado < 34.9) {
+                    mensagem += "Obesidade Grau I.";
+                } else if (resultado >= 35 && resultado < 39.9) {
+                    mensagem += "Obesidade Grau II.";
+                } else {
+                    mensagem += "Obesidade Grau III.";
+                }
+
+                document.querySelector(".resultado").textContent = mensagem;
+            } else {
+                document.querySelector(".resultado").textContent = "Por favor, insira valores válidos.";
+            }
+        }
+
+        
+    </script>
+
+
+
+   
+</body>
+</html>

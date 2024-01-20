@@ -1,0 +1,77 @@
+/* Defina variáveis para cores */
+:root {
+    --cor-destaque: #ff0000f5;
+    --cor-borda: #eeff009a;
+    --cor-fundo-corpo: #c0180250;
+    --cor-degradê-início: #000000; /* Tom escuro de roxo */
+    --cor-degradê-fim: #4b0082; /* Tom mais escuro de roxo */
+    
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.808);
+}
+
+/* Estilo para a div principal */
+#imc {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    width: 50%;
+    margin: 300px auto;
+    text-align: center;
+    color: #fff; 
+    background: linear-gradient(to bottom, var(--cor-degradê-início), var(--cor-degradê-fim));
+    padding: 20px; 
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px; 
+}
+
+div
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    width: 50%;
+    margin: 300px auto;
+    text-align: center;
+    color: #fff; /* Texto branco para contrastar com o fundo escuro */
+    background: linear-gradient(to bottom, var(--cor-degradê-início), var(--cor-degradê-fim));
+    padding: 90px; /* Aumentei o preenchimento para dar destaque à funcionalidade */
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+}
+#img 
+{filter:hue-rotate(35deg);}
+
+/* Estilo para o corpo da página */
+body {
+    background: linear-gradient(to bottom, var(--cor-degradê-início), var(--cor-degradê-fim)); /* Aplicar degradê ao fundo da página */
+}
+
+/* Estilo para as imagens */
+img {
+    display: block;
+    margin: 5px auto;
+    width: 500px;
+}
+
+/* Estilo responsivo para telas menores (exemplo) */
+@media screen and (max-width: 768px) {
+    div {
+        width: 80%;
+    }
+    img {
+        width: 100%;
+       
+    }
+}
+
+a 
+{
+
+    text-decoration: none;
+    color: rgb(255, 0, 0)
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Conversor de Celsius para Fahrenheit</title>
+    
+    
+</head>
+<body>
+    <div>
+    <h1>Conversor de Temperatura</h1>
+    <p>Insira a temperatura em graus Celsius:</p>
+    <input type="text" id="celsiusInput" placeholder="Digite a temperatura em Celsius">
+    <button onclick="converterTemperaturacelsius()">Converter</button>
+    <p>Insira a temperatura em graus Fahrenheit:</p>
+    <input type="text" id="fahrenheitInput" placeholder="Digite a temperatura em Fahrenheit">
+    <button onclick="converterTemperaturafahrenheit()">Converter</button>
+    <p id="resultado"></p>
+
+    <button onclick=""> <a href="calculadora.html">Calculadora de IMC</a></button>
+    <button onclick=""><a href="algebra.html">Calculadora algébrica</a></button>
+
+    </div>
+
+
+
+    <script>
+        function converterTemperaturacelsius() {
+            // Obter o valor inserido pelo usuário em Celsius
+            var celsius = parseFloat(document.getElementById("celsiusInput").value);
+
+            // Verificar se o valor inserido é um número válido
+            if (isNaN(celsius)) {
+                alert("Por favor, insira um número válido em Celsius.");
+                return;
+            }
+
+            // Realizar a conversão de Celsius para Fahrenheit
+            var fahrenheit = (celsius * 9/5) + 32;
+
+            // Exibir o resultado
+            document.getElementById("resultado").innerHTML = celsius + " graus Celsius é igual a " + fahrenheit.toFixed(2) + " graus Fahrenheit.";
+        }
+
+        function converterTemperaturafahrenheit() {
+
+            var fahrenheit= parseFloat(document.getElementById("fahrenheitInput").value);
+            
+            if (isNaN(fahrenheit)) {
+                alert("Por favor, insira um número válido em fahrenheit .");
+                return;
+            }
+
+
+                var celsius = ( fahrenheit - 32) / 1.8;
+                
+                document.getElementById("resultado").innerHTML = fahrenheit + " graus Fahrenheit é igual a " + celsius.toFixed(2) + " graus Celsius.";
+
+        }
+        
+    </script>
+</body>
+</html>

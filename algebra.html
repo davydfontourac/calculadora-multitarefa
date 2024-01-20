@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="calculadora">
+        <h1>Calculadora</h1><br>
+        <input id="display" type="text" placeholder="0">
+        <br>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="clearDisplay()">C</button>
+        <br>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="operate('+')">+</button>
+        <br>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="operate('-')">-</button>
+        <br>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="operate('*')">*</button>
+        <br>
+        <button onclick="operate('/')">/</button>
+
+        <br>
+        <button onclick=""><a href="conversor.html"> Conversor de temperatura</a></button>
+        <button onclick=""><a href="calculadora.html">Calculadora IMC</a></button>
+
+
+    </div>
+
+    <script>
+        let currentInput = "";
+        let currentOperation = "";
+        let result = 0;
+
+        function appendToDisplay(value) {
+            currentInput += value;
+            document.getElementById("display").value = currentInput;
+        }
+
+        function clearDisplay() {
+            currentInput = "";
+            document.getElementById("display").value = "0";
+        }
+
+        function operate(operation) {
+            currentOperation = operation;
+            result = parseFloat(currentInput);
+            clearDisplay();
+        }
+
+        function calculate() {
+            if (currentOperation === '+') {
+                result += parseFloat(currentInput);
+            } else if (currentOperation === '-') {
+                result -= parseFloat(currentInput);
+            } else if (currentOperation === '*') {
+                result *= parseFloat(currentInput);
+            } else if (currentOperation === '/') {
+                result /= parseFloat(currentInput);
+            }
+            document.getElementById("display").value = result;
+            currentInput = "";
+            currentOperation = "";
+        }
+    </script>
+</body>
+</html>
+
